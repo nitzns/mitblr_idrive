@@ -1,0 +1,129 @@
+body {
+    font-family: 'Helvetica Neue', sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #FFFAFA; /* Light background (Floral White) */
+    color: #000000; /* Black text */
+}
+
+/* Header styling */
+header {
+    background-color: #FF7F50; /* Coral background for header */
+    color: white;
+    padding: 15px 20px;
+    text-align: center;
+    position: relative;
+    height: 90px; /* Adjusted height for more spacious layout */
+    border-radius: 25px; /* Rounded edges */
+}
+
+header img {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%); /* Vertically center the logo */
+    width: 120px; /* Increased logo size */
+    height: auto; /* Maintain aspect ratio */
+}
+
+h1 {
+    margin: 0;
+    font-size: 40px; /* Larger font size */
+    color: white; /* White text for header */
+    letter-spacing: 1px; /* Spaced letters */
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5); /* Subtle text shadow */
+}
+
+/* Search bar styling */
+#search-bar {
+    width: 250px; /* Set a fixed width for the search bar */
+    padding: 8px; /* Reduced padding */
+    margin-top: 20px;
+    border: 1px solid #FF7F50; /* Coral border */
+    border-radius: 5px; /* Rounded corners */
+    font-size: 16px; /* Font size */
+    transition: width 0.4s ease; /* Smooth transition for width */
+}
+
+/* Optional: Make search bar expand on focus */
+#search-bar:focus {
+    width: 300px; /* Slightly expand on focus */
+    outline: none; /* Remove default outline */
+    box-shadow: 0 0 5px rgba(255, 127, 80, 0.5); /* Add a subtle shadow on focus */
+}
+
+/* Company list section */
+#company-list {
+    margin-top: 30px;
+    display: flex; /* Use flexbox for side by side display */
+    flex-wrap: wrap; /* Allow wrapping to new line */
+    gap: 20px; /* Space between cards */
+}
+
+/* Each company card */
+.company-card {
+    background-color: #FFFAFA; /* Floral white background for company cards */
+    color: #000000; /* Black text */
+    padding: 15px; /* Reduced padding */
+    border-radius: 20px; /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+    transition: all 0.3s ease; /* Smooth hover effect */
+    border-left: 6px solid #FF7F50; /* Coral accent on the left */
+    position: relative;
+    overflow: hidden;
+    flex: 1 1 calc(30% - 20px); /* Allow 3 cards per row with gaps */
+    max-width: calc(30% - 20px); /* Prevent cards from exceeding width */
+}
+
+/* Hover effect for company card */
+.company-card:hover {
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Slightly stronger shadow on hover */
+    transform: translateY(-4px); /* Reduced lift effect */
+    border-left: 6px solid black; /* Black left border on hover */
+}
+
+/* Decorative diagonal stripe on hover */
+.company-card:before {
+    content: '';
+    position: absolute;
+    top: -30px; /* Adjusted position */
+    right: -30px; /* Adjusted position */
+    width: 150px; /* Reduced size */
+    height: 150px; /* Reduced size */
+    background: rgba(0, 0, 0, 0.15); /* Subtle black overlay */
+    transform: rotate(45deg);
+    transition: 0.4s ease;
+}
+
+.company-card:hover:before {
+    background: rgba(0, 0, 0, 0.3);
+    right: -40px; /* Adjusted position */
+}
+
+/* Headings and text */
+.company-card h2 {
+    margin: 0 0 10px 0;
+    font-size: 24px; /* Larger font for headings */
+    color: #FF7F50; /* Coral text for headings */
+    text-transform: uppercase; /* Capitalized for emphasis */
+    letter-spacing: 1px;
+}
+
+.company-card p {
+    margin: 10px 0;
+    font-size: 16px; /* Adjusted for readability */
+    color: #000000; /* Black text */
+}
+
+a {
+    color: #FF7F50; /* Coral color for links */
+    font-weight: bold; /* Bold links */
+    text-decoration: none;
+    border-bottom: 2px solid transparent; /* Underline effect */
+    transition: border-bottom 0.2s ease, color 0.2s ease;
+}
+
+a:hover {
+    color: black; /* Black for link hover */
+    border-bottom: 2px solid black; /* Underline on hover */
+}
