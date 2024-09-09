@@ -2,6 +2,9 @@ body {
     font-family: 'Helvetica Neue', sans-serif;
     margin: 0;
     padding: 20px;
+    background-image: url('MARC.jpg'); /* Background image */
+    background-size: cover;
+    background-repeat: no-repeat;
     background-color: #FFFAFA; /* Light background (Floral White) */
     color: #000000; /* Black text */
 }
@@ -13,31 +16,38 @@ header {
     padding: 15px 20px;
     text-align: center;
     position: relative;
-    height: 90px; /* Adjusted height for more spacious layout */
     border-radius: 25px; /* Rounded edges */
+    margin-bottom: 20px; /* Space below header */
 }
 
+/* Logo styling */
 header img {
-    position: absolute;
-    left: 20px;
-    top: 50%;
-    transform: translateY(-50%); /* Vertically center the logo */
-    width: 120px; /* Increased logo size */
+    width: 120px; /* Adjusted size for better mobile view */
     height: auto; /* Maintain aspect ratio */
+    margin-bottom: 15px; /* Space between logo and heading */
 }
 
+/* Headings */
 h1 {
     margin: 0;
-    font-size: 40px; /* Larger font size */
+    font-size: 2rem; /* Responsive font size */
     color: white; /* White text for header */
     letter-spacing: 1px; /* Spaced letters */
     text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5); /* Subtle text shadow */
 }
 
+h2 {
+    color: white;
+    font-size: 1.2rem; /* Responsive font size */
+    margin-top: 10px;
+    letter-spacing: 1px;
+}
+
 /* Search bar styling */
 #search-bar {
-    width: 250px; /* Set a fixed width for the search bar */
-    padding: 8px; /* Reduced padding */
+    width: 100%; /* Full width on small screens */
+    max-width: 400px; /* Limit max-width */
+    padding: 10px; /* Increased padding for touch friendliness */
     margin-top: 20px;
     border: 1px solid #FF7F50; /* Coral border */
     border-radius: 5px; /* Rounded corners */
@@ -47,7 +57,7 @@ h1 {
 
 /* Optional: Make search bar expand on focus */
 #search-bar:focus {
-    width: 300px; /* Slightly expand on focus */
+    width: 100%; /* Expand to full width on focus */
     outline: none; /* Remove default outline */
     box-shadow: 0 0 5px rgba(255, 127, 80, 0.5); /* Add a subtle shadow on focus */
 }
@@ -71,8 +81,8 @@ h1 {
     border-left: 6px solid #FF7F50; /* Coral accent on the left */
     position: relative;
     overflow: hidden;
-    flex: 1 1 calc(30% - 20px); /* Allow 3 cards per row with gaps */
-    max-width: calc(30% - 20px); /* Prevent cards from exceeding width */
+    flex: 1 1 calc(100% - 20px); /* Responsive width for mobile */
+    max-width: calc(100% - 20px); /* Prevent cards from exceeding width */
 }
 
 /* Hover effect for company card */
@@ -103,7 +113,7 @@ h1 {
 /* Headings and text */
 .company-card h2 {
     margin: 0 0 10px 0;
-    font-size: 24px; /* Larger font for headings */
+    font-size: 1.5rem; /* Responsive font for headings */
     color: #FF7F50; /* Coral text for headings */
     text-transform: uppercase; /* Capitalized for emphasis */
     letter-spacing: 1px;
@@ -111,7 +121,7 @@ h1 {
 
 .company-card p {
     margin: 10px 0;
-    font-size: 16px; /* Adjusted for readability */
+    font-size: 1rem; /* Responsive font size for readability */
     color: #000000; /* Black text */
 }
 
@@ -126,4 +136,21 @@ a {
 a:hover {
     color: black; /* Black for link hover */
     border-bottom: 2px solid black; /* Underline on hover */
+}
+
+/* Responsive design adjustments */
+@media (min-width: 768px) {
+    /* Adjustments for tablets and larger screens */
+    .company-card {
+        flex: 1 1 calc(48% - 20px); /* 2 cards per row */
+        max-width: calc(48% - 20px); /* Prevent cards from exceeding width */
+    }
+}
+
+@media (min-width: 1024px) {
+    /* Adjustments for desktops and larger screens */
+    .company-card {
+        flex: 1 1 calc(30% - 20px); /* 3 cards per row */
+        max-width: calc(30% - 20px); /* Prevent cards from exceeding width */
+    }
 }
